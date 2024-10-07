@@ -4,10 +4,8 @@ from selenium.webdriver.common.by import By
 
 @pytest.fixture
 def driver():
-    # Setup: create a new instance of the Chrome driver
     driver = webdriver.Chrome()
-    yield driver  # This will be used in the tests
-    # Teardown: close the driver
+    yield driver
     driver.quit()
 
 def test_title_if_correct(driver):
